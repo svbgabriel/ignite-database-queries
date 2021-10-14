@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  database:
+    image: postgres:14-alpine
+    container_name: ignite-challenge-database-queries
+    environment:
+      POSTGRES_DB: queries_challenge
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docker
+    volumes:
+      - database_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  
+volumes:
+  database_data:
